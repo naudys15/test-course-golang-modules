@@ -154,7 +154,7 @@ func isPalindrome(text string) (string, bool) {
 
 }
 
-func CheckPalindrome(values ...string) (string, bool) {
+func CheckPalindrome(values []string) (string, bool) {
 	var result string
 	var check bool
 	if len(values) == 0 {
