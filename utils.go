@@ -154,12 +154,14 @@ func isPalindrome(text string) (string, bool) {
 
 }
 
-func CheckPalindrome(values []string) ([]string, []bool) {
+func CheckPalindrome(values []string) ([]string, []string, []bool) {
+	var phrases []string
 	var results []string
 	var checks []bool
+	var check_strings []string
 	if len(values) == 0 {
 		// Check palindrome words. Example: amor a roma
-		check_strings := [...]string{
+		check_strings = []string{
 			"Dábale arroz a la zorra el abad",
 			"amor a roma",
 			"se es o no se es",
@@ -197,17 +199,14 @@ func CheckPalindrome(values []string) ([]string, []bool) {
 			"Ein Neger mit Gazelle zagt im Regen nie",
 			"Ésope reste ici et se repose",
 		}
-		for _, v := range check_strings {
-			temp_result, temp_check := isPalindrome(v)
-			results = append(results, temp_result)
-			checks = append(checks, temp_check)
-		}
 	} else if len(values) > 0 {
-		for _, v := range values {
-			temp_result, temp_check := isPalindrome(v)
-			results = append(results, temp_result)
-			checks = append(checks, temp_check)
-		}
+		check_strings = values
 	}
-	return results, checks
+	for _, v := range check_strings {
+		temp_result, temp_check := isPalindrome(v)
+		phrases = append(phrases, v)
+		results = append(results, temp_result)
+		checks = append(checks, temp_check)
+	}
+	return phrases, results, checks
 }
