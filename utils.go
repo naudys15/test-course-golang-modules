@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"fmt"
 	"regexp"
 	"strings"
 	"unicode"
@@ -133,7 +132,7 @@ func trimAllSpaces(str string) string {
 	}, str)
 }
 
-func isPalindrome(text string) {
+func isPalindrome(text string) (string, bool) {
 	var reverse_text string
 	// Remove all spaces inside string
 	new_text := trimAllSpaces(text)
@@ -148,14 +147,16 @@ func isPalindrome(text string) {
 	}
 
 	if reverse_text == new_text {
-		fmt.Println("Is palindrome")
+		return "Is palindrome", true
 	} else {
-		fmt.Println("Is not palindrome")
+		return "Is not palindrome", false
 	}
+
 }
 
-func CheckPalindrome(values ...string) {
-
+func CheckPalindrome(values ...string) (string, bool) {
+	var result string
+	var check bool
 	if len(values) == 0 {
 		// Check palindrome words. Example: amor a roma
 		check_strings := [...]string{
@@ -197,11 +198,12 @@ func CheckPalindrome(values ...string) {
 			"Ésope reste ici et se repose",
 		}
 		for _, v := range check_strings {
-			isPalindrome(v)
+			result, check = isPalindrome(v)
 		}
 	} else if len(values) > 0 {
 		for _, v := range values {
-			isPalindrome(v)
+			result, check = isPalindrome(v)
 		}
 	}
+	return result, check
 }
