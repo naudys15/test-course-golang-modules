@@ -154,7 +154,7 @@ func isPalindrome(text string) {
 	}
 }
 
-func TestModule(values ...string) {
+func CheckPalindrome(values ...string) {
 
 	if len(values) == 0 {
 		// Check palindrome words. Example: amor a roma
