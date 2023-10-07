@@ -154,62 +154,54 @@ func isPalindrome(text string) {
 	}
 }
 
-func TestModule() {
-	// Slice with range
-	slice := []string{"hello", "what's", "up"}
+func TestModule(values ...string) {
 
-	for i, _ := range slice {
-		fmt.Println(i)
-	}
-
-	for _, value := range slice {
-		fmt.Println(value)
-	}
-
-	for i, value := range slice {
-		fmt.Println(i, value)
-	}
-
-	// Check palindrome words. Example: amor a roma
-	check_strings := [...]string{
-		"Dábale arroz a la zorra el abad",
-		"amor a roma",
-		"se es o no se es",
-		"A mamá Roma le aviva el amor a papá y a papá Roma le aviva el amor a mamá",
-		"Adivina ya te opina ya ni miles origina, ya ni cetro me domina, ya ni monarcas, a repaso ni mulato carreta, acaso nicotina, ya ni cita vecino, anima cocina, pedazo gallina, cedazo terso nos retoza de canilla goza, de pánico camina, ónice vaticina, ya ni tocino saca, a terracota luminosa pera, sacra nómina y ánimo de mortecina, ya ni giros elimina, ya ni poeta, ya ni vida",
-		"No deseo yo ese don",
-		"Eva usaba rimel y le miraba suave",
-		"Yo dono rosas, oro no doy",
-		"Amo la pacífica paloma",
-		"Anita, la gorda lagartona, no traga la droga latina",
-		"La sed será mares de sal",
-		"Anás usó tu auto, Susana",
-		"Sobornos son robos",
-		"¿Acaso hubo búhos acá?",
-		"Amargor pleno con el programa",
-		"No di mi decoro, cedí mi don",
-		"A man, a plan, a canal: Panama!",
-		"Satan oscillate my metallic sonatas",
-		"Eva, can I stab bats in a cave?",
-		"Was it a car or a cat I saw",
-		"A nut for a jar of tuna.",
-		"Able was I ere I saw Elba",
-		"In girum imus nocte et consumimur igni",
-		"Si bene te tua laus taxat, sua laute tenebis",
-		"Sėdėk užu kėdės",
-		"Koortsmeetssyssteemstrook",
-		"Roma, lo còr nud d’un ròc o l’amor",
-		"Socorram-me, subi no ônibus em Marrocos",
-		"Assim a aia ia à missa",
-		"Ze nekeza inori atea irekitzea eztikeria eta ironia zekenez",
-		"I topi non avevano nipoti",
-		"Syy hyökätä: köyhyys",
-		"Memoru ne matene juĝi, ne cedigi. Raru bele, ine. Neniel ebura rigidec' eniĝu. Jen eta menuro mem.",
-		"Allí, tieta Mercè, faci cafè, crema, te i til·la",
-		"Ein Neger mit Gazelle zagt im Regen nie",
-		"Ésope reste ici et se repose",
-	}
-	for _, v := range check_strings {
-		isPalindrome(v)
+	if len(values) == 0 {
+		// Check palindrome words. Example: amor a roma
+		check_strings := [...]string{
+			"Dábale arroz a la zorra el abad",
+			"amor a roma",
+			"se es o no se es",
+			"A mamá Roma le aviva el amor a papá y a papá Roma le aviva el amor a mamá",
+			"Adivina ya te opina ya ni miles origina, ya ni cetro me domina, ya ni monarcas, a repaso ni mulato carreta, acaso nicotina, ya ni cita vecino, anima cocina, pedazo gallina, cedazo terso nos retoza de canilla goza, de pánico camina, ónice vaticina, ya ni tocino saca, a terracota luminosa pera, sacra nómina y ánimo de mortecina, ya ni giros elimina, ya ni poeta, ya ni vida",
+			"No deseo yo ese don",
+			"Eva usaba rimel y le miraba suave",
+			"Yo dono rosas, oro no doy",
+			"Amo la pacífica paloma",
+			"Anita, la gorda lagartona, no traga la droga latina",
+			"La sed será mares de sal",
+			"Anás usó tu auto, Susana",
+			"Sobornos son robos",
+			"¿Acaso hubo búhos acá?",
+			"Amargor pleno con el programa",
+			"No di mi decoro, cedí mi don",
+			"A man, a plan, a canal: Panama!",
+			"Satan oscillate my metallic sonatas",
+			"Eva, can I stab bats in a cave?",
+			"Was it a car or a cat I saw",
+			"A nut for a jar of tuna.",
+			"Able was I ere I saw Elba",
+			"In girum imus nocte et consumimur igni",
+			"Si bene te tua laus taxat, sua laute tenebis",
+			"Sėdėk užu kėdės",
+			"Koortsmeetssyssteemstrook",
+			"Roma, lo còr nud d’un ròc o l’amor",
+			"Socorram-me, subi no ônibus em Marrocos",
+			"Assim a aia ia à missa",
+			"Ze nekeza inori atea irekitzea eztikeria eta ironia zekenez",
+			"I topi non avevano nipoti",
+			"Syy hyökätä: köyhyys",
+			"Memoru ne matene juĝi, ne cedigi. Raru bele, ine. Neniel ebura rigidec' eniĝu. Jen eta menuro mem.",
+			"Allí, tieta Mercè, faci cafè, crema, te i til·la",
+			"Ein Neger mit Gazelle zagt im Regen nie",
+			"Ésope reste ici et se repose",
+		}
+		for _, v := range check_strings {
+			isPalindrome(v)
+		}
+	} else if len(values) > 0 {
+		for _, v := range values {
+			isPalindrome(v)
+		}
 	}
 }
