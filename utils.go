@@ -154,9 +154,9 @@ func isPalindrome(text string) (string, bool) {
 
 }
 
-func CheckPalindrome(values []string) (string, bool) {
-	var result string
-	var check bool
+func CheckPalindrome(values []string) ([]string, []bool) {
+	var results []string
+	var checks []bool
 	if len(values) == 0 {
 		// Check palindrome words. Example: amor a roma
 		check_strings := [...]string{
@@ -198,12 +198,16 @@ func CheckPalindrome(values []string) (string, bool) {
 			"Ésope reste ici et se repose",
 		}
 		for _, v := range check_strings {
-			result, check = isPalindrome(v)
+			temp_result, temp_check := isPalindrome(v)
+			results = append(results, temp_result)
+			checks = append(checks, temp_check)
 		}
 	} else if len(values) > 0 {
 		for _, v := range values {
-			result, check = isPalindrome(v)
+			temp_result, temp_check := isPalindrome(v)
+			results = append(results, temp_result)
+			checks = append(checks, temp_check)
 		}
 	}
-	return result, check
+	return results, checks
 }
